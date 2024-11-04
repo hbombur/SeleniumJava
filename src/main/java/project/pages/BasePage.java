@@ -22,6 +22,4 @@ public class BasePage {
     public List<WebElement> getArrayOfWebElementByXpath(String xpath) {
         return testDriver.findElements(By.xpath(xpath));
     }
-
-    public void refreshPage() { testDriver.navigate().refresh(); }
 }
