@@ -52,6 +52,7 @@ public class CreateBusinessTripPage extends BasePage {
     @FindBy(xpath = "//li[contains(text(), 'CSRF значение недопустимо. Пожалуйста, попробуйте повторить отправку формы.')]")
     private WebElement errorMessage;
 
+
     public void assertHeaderCreateBusinessTripIsDisplayed() {
         wait.until(visibilityOf(headerCreateBusinessTrip));
         Assertions.assertTrue(headerCreateBusinessTrip.isDisplayed());
@@ -77,7 +78,6 @@ public class CreateBusinessTripPage extends BasePage {
     }
 
     public void setFieldArrivalCityAndAssert(String countryAndCity) {
-//        wait.until(visibilityOf(fieldArrivalCity));
         fieldArrivalCity.sendKeys(countryAndCity);
         Assertions.assertEquals(fieldArrivalCity.getAttribute("value"), countryAndCity);
     }
